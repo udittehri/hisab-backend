@@ -2,40 +2,43 @@ const mongoose = require('mongoose');
 const messages = require('./../../common/messages');
 
 var schema = new mongoose.Schema({
-    name: {
+    note: {
         type: String,
-        required: [true, messages.FULL_NAME_REQUIRED],
+        required: false
     },
-    user_id: {
+    amount: {
+        type: Number,
+        required: true
+    },
+    picture: {
+        type: String,
+        required: false,
+        unique: true,
+        sparse: true
+    },
+    currentBalance: {
+        type: String,
+        required: true
+    },
+    date: {
         type: String,
         required: true,
         unique: true,
         sparse: true
     },
-    email: {
-        type: String,
-        required: false,
-        unique: true,
-        sparse: true
-    },
-    phone: {
-        type: String,
-        required: false,
-        unique: true,
-        sparse: true
-    },
-    picture: {
+    isCr: {
         type: String,
         required: false,
         default: null
     },
-    address: {
-        type: String,
-        required: false
-    },
-    balance: {
+    status: {
         type: Number,
-        default: 0
+        enum: [1, 2], // 1-> Active , 2->Inactive, 3-> Absconded,
+        default: 1
+    },
+    xoxo_id: {
+        type: String,
+        required: true
     },
     password_reset_token: String,
 
@@ -46,4 +49,4 @@ var schema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('XOXO', schema);
+module.exports = mongoose.model('Transactions', schema);

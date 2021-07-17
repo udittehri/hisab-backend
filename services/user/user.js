@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const messages = require('../common/messages');
+const messages = require('./../../common/messages');
 
 var schema = new mongoose.Schema({
     name: {
@@ -8,7 +8,7 @@ var schema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required:false,
+        required: false,
         unique: true,
         sparse: true
     },
@@ -32,10 +32,17 @@ var schema = new mongoose.Schema({
         enum: [1, 2, 3], // 1-> Active , 2->Inactive, 3-> Absconded,
         default: 1
     },
+    balance: {
+        required: false,
+        default: 0
+    },
     password_reset_token: String,
 
 }, {
-    timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
+    timestamps: {
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
+    }
 });
 
 module.exports = mongoose.model('User', schema);

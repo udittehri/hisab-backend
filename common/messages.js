@@ -15,7 +15,8 @@ module.exports = {
     STATUS_REQUIRED: 'Status is a required field',
     CONTACT_REQUIRED: 'Contact number is a required field.',
     CONTACT_INVALID: 'Contact number is not registered With Us',
-    EMAIL_ALREADY_EXIST: 'Email address already exists.',
+    USER_ALREADY_EXIST: 'User already exists.',
+
     CONTACT_ALREADY_EXIST: 'Contact number already exists.',
     USERNAME_NOT_VALID: 'Username is Invalid',
 
@@ -24,7 +25,8 @@ module.exports = {
     ADDRESS_ID_REQUIRED: 'Address Id is a required field',
     ADDRESS_ID_INVALID: 'Address Id is invalid',
 
-    ALL_REQUIRED: 'All fields are required'
+    ALL_REQUIRED: 'All fields are required',
+    AMOUNT_REQUIRED: "Transaction amount is required"
 
 
 }

@@ -1,4 +1,4 @@
-const User = require('../../models/user');
+const User = require('./user');
 
 class UserService {
 
@@ -14,7 +14,9 @@ class UserService {
     }
 
     updateUser(criteria, details) {
-        return User.findOneAndUpdate(criteria, details, { new: true })
+        return User.findOneAndUpdate(criteria, details, {
+            new: true
+        })
     }
 
     // Delete User is To Update User with status Disabled 

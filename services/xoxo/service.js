@@ -14,7 +14,13 @@ class XOXOService {
     }
 
     updateXOXO(criteria, details) {
-        return XOXO.findOneAndUpdate(criteria, details, { new: true })
+        return XOXO.findOneAndUpdate(criteria, details, {
+            new: true
+        })
+    }
+
+    getXOXOwithTransactions() {
+
     }
 
     // Delete XOXO is To Update XOXO with status Disabled 

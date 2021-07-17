@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const XOXOController = require('./controller');
+const TransactionController = require('./controller');
 
-router.post('/add', XOXOController.addXO )
+router.post('/create', TransactionController.create)
 // router.post('/add',AuthController.register)
 // router.post('/updatePassword',AuthController.updatePassword)
 
